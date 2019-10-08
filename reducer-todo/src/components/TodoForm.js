@@ -20,7 +20,7 @@ const TodoForm = (props) => {
                 value={item}
                 onChange={handleChange} />
             <button type="submit">Add Todo</button>
-            <button onClick={handleClear}>Clear Completed</button>
+            <button>Clear Completed</button>
         </form>
     );
 };
