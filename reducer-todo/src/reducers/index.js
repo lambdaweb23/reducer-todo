@@ -22,6 +22,20 @@ export function reducer(state, action) {
                 ...state,
                 todoArray: [...state.todoArray, newTodo] // state.todoArray.concat(newTodo)
             };
+        case "TOGGLE_TODO":
+            return {
+                ...state,
+                todoArray: state.todoArray.map(todo => {
+                    if (todo.id === action.payload) {
+                        return {
+                            ...todo,
+                            completed: !todo.completed
+                        };
+                    } else {
+                        return todo;
+                    }
+                })
+            };
         default:
             return state;
     }
